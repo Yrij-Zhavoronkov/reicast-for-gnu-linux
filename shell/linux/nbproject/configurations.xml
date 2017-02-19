@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="core"
+                   displayName="core"
+                   projectFiles="true"
+                   root="../../core">
+      <logicalFolder name="cfg" displayName="cfg" projectFiles="true">
+        <itemPath>../../core/cfg/cfg.cpp</itemPath>
+        <itemPath>../../core/cfg/cfg.h</itemPath>
+        <itemPath>../../core/cfg/cl.cpp</itemPath>
+        <itemPath>../../core/cfg/ini.cpp</itemPath>
+        <itemPath>../../core/cfg/ini.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="deps" displayName="deps" projectFiles="true">
+        <logicalFolder name="chdpsr" displayName="chdpsr" projectFiles="true">
+          <itemPath>../../core/deps/chdpsr/cdipsr.cpp</itemPath>
+          <itemPath>../../core/deps/chdpsr/cdipsr.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="chdr" displayName="chdr" projectFiles="true">
+          <itemPath>../../core/deps/chdr/chd.h</itemPath>
+          <itemPath>../../core/deps/chdr/chdr.cpp</itemPath>
+          <itemPath>../../core/deps/chdr/coretypes.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="coreio" displayName="coreio" projectFiles="true">
+          <itemPath>../../core/deps/coreio/coreio.cpp</itemPath>
+          <itemPath>../../core/deps/coreio/coreio.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
+          <itemPath>../../core/deps/crypto/md5.cpp</itemPath>
+          <itemPath>../../core/deps/crypto/md5.h</itemPath>
+          <itemPath>../../core/deps/crypto/sha1.cpp</itemPath>
+          <itemPath>../../core/deps/crypto/sha1.h</itemPath>
+          <itemPath>../../core/deps/crypto/sha256.cpp</itemPath>
+          <itemPath>../../core/deps/crypto/sha256.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="ifaddrs" displayName="ifaddrs" projectFiles="true">
+          <itemPath>../../core/deps/ifaddrs/ifaddrs.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="libelf" displayName="libelf" projectFiles="true">
+          <itemPath>../../core/deps/libelf/debug.h</itemPath>
+          <itemPath>../../core/deps/libelf/elf.cpp</itemPath>
+          <itemPath>../../core/deps/libelf/elf.h</itemPath>
+          <itemPath>../../core/deps/libelf/elf32.cpp</itemPath>
+          <itemPath>../../core/deps/libelf/elf32.h</itemPath>
+          <itemPath>../../core/deps/libelf/elf64.cpp</itemPath>
+          <itemPath>../../core/deps/libelf/elf64.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="libpng" displayName="libpng" projectFiles="true">
+          <itemPath>../../core/deps/libpng/png.c</itemPath>
+          <itemPath>../../core/deps/libpng/png.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngconf.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngdebug.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngerror.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngget.c</itemPath>
+          <itemPath>../../core/deps/libpng/pnginfo.h</itemPath>
+          <itemPath>../../core/deps/libpng/pnglibconf.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngmem.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngpread.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngpriv.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngread.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngrio.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngrtran.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngrutil.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngset.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngstruct.h</itemPath>
+          <itemPath>../../core/deps/libpng/pngtrans.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngwio.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngwrite.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngwtran.c</itemPath>
+          <itemPath>../../core/deps/libpng/pngwutil.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="libwebsocket"
+                       displayName="libwebsocket"
+                       projectFiles="true">
+          <itemPath>../../core/deps/libwebsocket/base64-decode.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/client-handshake.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/client-parser.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/client.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/config.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/context.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/extension-deflate-frame.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/extension-deflate-frame.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/extension-deflate-stream.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/extension-deflate-stream.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/extension.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/handshake.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/lextable.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/libwebsockets.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/libwebsockets.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/lws-plat-unix.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/lws-plat-win.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/output.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/parsers.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/pollfd.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/private-libwebsockets.h</itemPath>
+          <itemPath>../../core/deps/libwebsocket/server-handshake.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/server.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/service.c</itemPath>
+          <itemPath>../../core/deps/libwebsocket/sha-1.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="xbyak" displayName="xbyak" projectFiles="true">
+          <itemPath>../../core/deps/xbyak/xbyak.h</itemPath>
+          <itemPath>../../core/deps/xbyak/xbyak_bin2hex.h</itemPath>
+          <itemPath>../../core/deps/xbyak/xbyak_mnemonic.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="zlib" displayName="zlib" projectFiles="true">
+          <itemPath>../../core/deps/zlib/adler32.c</itemPath>
+          <itemPath>../../core/deps/zlib/compress.c</itemPath>
+          <itemPath>../../core/deps/zlib/crc32.c</itemPath>
+          <itemPath>../../core/deps/zlib/crc32.h</itemPath>
+          <itemPath>../../core/deps/zlib/deflate.c</itemPath>
+          <itemPath>../../core/deps/zlib/deflate.h</itemPath>
+          <itemPath>../../core/deps/zlib/gzclose.c</itemPath>
+          <itemPath>../../core/deps/zlib/gzguts.h</itemPath>
+          <itemPath>../../core/deps/zlib/gzlib.c</itemPath>
+          <itemPath>../../core/deps/zlib/gzread.c</itemPath>
+          <itemPath>../../core/deps/zlib/gzwrite.c</itemPath>
+          <itemPath>../../core/deps/zlib/infback.c</itemPath>
+          <itemPath>../../core/deps/zlib/inffast.c</itemPath>
+          <itemPath>../../core/deps/zlib/inffast.h</itemPath>
+          <itemPath>../../core/deps/zlib/inffixed.h</itemPath>
+          <itemPath>../../core/deps/zlib/inflate.c</itemPath>
+          <itemPath>../../core/deps/zlib/inflate.h</itemPath>
+          <itemPath>../../core/deps/zlib/inftrees.c</itemPath>
+          <itemPath>../../core/deps/zlib/inftrees.h</itemPath>
+          <itemPath>../../core/deps/zlib/trees.c</itemPath>
+          <itemPath>../../core/deps/zlib/trees.h</itemPath>
+          <itemPath>../../core/deps/zlib/uncompr.c</itemPath>
+          <itemPath>../../core/deps/zlib/zconf.h</itemPath>
+          <itemPath>../../core/deps/zlib/zlib.h</itemPath>
+          <itemPath>../../core/deps/zlib/zutil.c</itemPath>
+          <itemPath>../../core/deps/zlib/zutil.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="emitter" displayName="emitter" projectFiles="true">
+        <itemPath>../../core/emitter/generated_class_names.h</itemPath>
+        <itemPath>../../core/emitter/types.h</itemPath>
+        <itemPath>../../core/emitter/x86_emitter.h</itemPath>
+        <itemPath>../../core/emitter/x86_op_classes.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="hw" displayName="hw" projectFiles="true">
+        <logicalFolder name="aica" displayName="aica" projectFiles="true">
+          <itemPath>../../core/hw/aica/aica.cpp</itemPath>
+          <itemPath>../../core/hw/aica/aica.h</itemPath>
+          <itemPath>../../core/hw/aica/aica_if.cpp</itemPath>
+          <itemPath>../../core/hw/aica/aica_if.h</itemPath>
+          <itemPath>../../core/hw/aica/aica_mem.cpp</itemPath>
+          <itemPath>../../core/hw/aica/aica_mem.h</itemPath>
+          <itemPath>../../core/hw/aica/dsp.cpp</itemPath>
+          <itemPath>../../core/hw/aica/dsp.h</itemPath>
+          <itemPath>../../core/hw/aica/sgc_if.cpp</itemPath>
+          <itemPath>../../core/hw/aica/sgc_if.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="arm7" displayName="arm7" projectFiles="true">
+          <itemPath>../../core/hw/arm7/arm7.cpp</itemPath>
+          <itemPath>../../core/hw/arm7/arm7.h</itemPath>
+          <itemPath>../../core/hw/arm7/arm_mem.cpp</itemPath>
+          <itemPath>../../core/hw/arm7/arm_mem.h</itemPath>
+          <itemPath>../../core/hw/arm7/vbaARM.cpp</itemPath>
+          <itemPath>../../core/hw/arm7/virt_arm.cpp</itemPath>
+          <itemPath>../../core/hw/arm7/virt_arm.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="flashrom" displayName="flashrom" projectFiles="true">
+          <itemPath>../../core/hw/flashrom/flashrom.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="gdrom" displayName="gdrom" projectFiles="true">
+          <itemPath>../../core/hw/gdrom/gdrom_if.h</itemPath>
+          <itemPath>../../core/hw/gdrom/gdrom_response.cpp</itemPath>
+          <itemPath>../../core/hw/gdrom/gdromv3.cpp</itemPath>
+          <itemPath>../../core/hw/gdrom/gdromv3.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="holly" displayName="holly" projectFiles="true">
+          <itemPath>../../core/hw/holly/holly_intc.cpp</itemPath>
+          <itemPath>../../core/hw/holly/holly_intc.h</itemPath>
+          <itemPath>../../core/hw/holly/sb.cpp</itemPath>
+          <itemPath>../../core/hw/holly/sb.h</itemPath>
+          <itemPath>../../core/hw/holly/sb_dma.cpp</itemPath>
+          <itemPath>../../core/hw/holly/sb_mem.cpp</itemPath>
+          <itemPath>../../core/hw/holly/sb_mem.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="maple" displayName="maple" projectFiles="true">
+          <itemPath>../../core/hw/maple/maple_cfg.cpp</itemPath>
+          <itemPath>../../core/hw/maple/maple_cfg.h</itemPath>
+          <itemPath>../../core/hw/maple/maple_devs.cpp</itemPath>
+          <itemPath>../../core/hw/maple/maple_devs.h</itemPath>
+          <itemPath>../../core/hw/maple/maple_helper.cpp</itemPath>
+          <itemPath>../../core/hw/maple/maple_helper.h</itemPath>
+          <itemPath>../../core/hw/maple/maple_if.cpp</itemPath>
+          <itemPath>../../core/hw/maple/maple_if.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="mem" displayName="mem" projectFiles="true">
+          <itemPath>../../core/hw/mem/_vmem.cpp</itemPath>
+          <itemPath>../../core/hw/mem/_vmem.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="naomi" displayName="naomi" projectFiles="true">
+          <itemPath>../../core/hw/naomi/naomi.cpp</itemPath>
+          <itemPath>../../core/hw/naomi/naomi.h</itemPath>
+          <itemPath>../../core/hw/naomi/naomi_cart.cpp</itemPath>
+          <itemPath>../../core/hw/naomi/naomi_cart.h</itemPath>
+          <itemPath>../../core/hw/naomi/naomi_regs.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="pvr" displayName="pvr" projectFiles="true">
+          <itemPath>../../core/hw/pvr/Renderer_if.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/Renderer_if.h</itemPath>
+          <itemPath>../../core/hw/pvr/config.h</itemPath>
+          <itemPath>../../core/hw/pvr/drkPvr.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/drkPvr.h</itemPath>
+          <itemPath>../../core/hw/pvr/helper_classes.h</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_mem.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_mem.h</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_regs.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_regs.h</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_sb_regs.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/pvr_sb_regs.h</itemPath>
+          <itemPath>../../core/hw/pvr/spg.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/spg.h</itemPath>
+          <itemPath>../../core/hw/pvr/ta.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/ta.h</itemPath>
+          <itemPath>../../core/hw/pvr/ta_const_df.h</itemPath>
+          <itemPath>../../core/hw/pvr/ta_ctx.cpp</itemPath>
+          <itemPath>../../core/hw/pvr/ta_ctx.h</itemPath>
+          <itemPath>../../core/hw/pvr/ta_structs.h</itemPath>
+          <itemPath>../../core/hw/pvr/ta_vtx.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="sh4" displayName="sh4" projectFiles="true">
+          <logicalFolder name="dyna" displayName="dyna" projectFiles="true">
+            <itemPath>../../core/hw/sh4/dyna/blockmanager.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/blockmanager.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/decoder.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/decoder.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/decoder_opcodes.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/driver.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/ngen.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/rec_config.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/regalloc.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/shil.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/shil.h</itemPath>
+            <itemPath>../../core/hw/sh4/dyna/shil_canonical.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="interpr" displayName="interpr" projectFiles="true">
+            <itemPath>../../core/hw/sh4/interpr/sh4_fpu.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/interpr/sh4_interpreter.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/interpr/sh4_opcodes.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/interpr/sh4_opcodes.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="modules" displayName="modules" projectFiles="true">
+            <itemPath>../../core/hw/sh4/modules/bsc.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/ccn.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/ccn.h</itemPath>
+            <itemPath>../../core/hw/sh4/modules/cpg.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/dmac.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/dmac.h</itemPath>
+            <itemPath>../../core/hw/sh4/modules/intc.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/mmu.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/mmu.h</itemPath>
+            <itemPath>../../core/hw/sh4/modules/modules.h</itemPath>
+            <itemPath>../../core/hw/sh4/modules/rtc.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/serial.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/tmu.cpp</itemPath>
+            <itemPath>../../core/hw/sh4/modules/tmu.h</itemPath>
+            <itemPath>../../core/hw/sh4/modules/ubc.cpp</itemPath>
+          </logicalFolder>
+          <itemPath>../../core/hw/sh4/fsca-table.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_core.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_core_regs.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_if.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_interpreter.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_interrupts.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_interrupts.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_mem.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_mem.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_mmr.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_mmr.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_opcode.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_opcode_list.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_opcode_list.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_rom.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_rom.h</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_sched.cpp</itemPath>
+          <itemPath>../../core/hw/sh4/sh4_sched.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="imgread" displayName="imgread" projectFiles="true">
+        <itemPath>../../core/imgread/ImgReader.cpp</itemPath>
+        <itemPath>../../core/imgread/ImgReader.h</itemPath>
+        <itemPath>../../core/imgread/cdi.cpp</itemPath>
+        <itemPath>../../core/imgread/chd.cpp</itemPath>
+        <itemPath>../../core/imgread/common.cpp</itemPath>
+        <itemPath>../../core/imgread/common.h</itemPath>
+        <itemPath>../../core/imgread/gd_driver.h</itemPath>
+        <itemPath>../../core/imgread/gdi.cpp</itemPath>
+        <itemPath>../../core/imgread/ioctl.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="khronos" displayName="khronos" projectFiles="true">
+        <logicalFolder name="GL3" displayName="GL3" projectFiles="true">
+          <itemPath>../../core/khronos/GL3/gl3.h</itemPath>
+          <itemPath>../../core/khronos/GL3/gl3w.c</itemPath>
+          <itemPath>../../core/khronos/GL3/gl3w.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="linux" displayName="linux" projectFiles="true">
+        <logicalFolder name="nixprof" displayName="nixprof" projectFiles="true">
+          <itemPath>../../core/linux/nixprof/nixprof.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>../../core/linux/common.cpp</itemPath>
+        <itemPath>../../core/linux/context.cpp</itemPath>
+        <itemPath>../../core/linux/context.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="linux-dist" displayName="linux-dist" projectFiles="true">
+        <itemPath>../../core/linux-dist/evdev.cpp</itemPath>
+        <itemPath>../../core/linux-dist/evdev.h</itemPath>
+        <itemPath>../../core/linux-dist/joystick.cpp</itemPath>
+        <itemPath>../../core/linux-dist/joystick.h</itemPath>
+        <itemPath>../../core/linux-dist/main.cpp</itemPath>
+        <itemPath>../../core/linux-dist/main.h</itemPath>
+        <itemPath>/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/sync_net.cpp</itemPath>
+        <itemPath>/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/sync_net.h</itemPath>
+        <itemPath>../../core/linux-dist/x11.cpp</itemPath>
+        <itemPath>../../core/linux-dist/x11.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="oslib" displayName="oslib" projectFiles="true">
+        <itemPath>../../core/oslib/audiobackend_alsa.cpp</itemPath>
+        <itemPath>../../core/oslib/audiobackend_alsa.h</itemPath>
+        <itemPath>../../core/oslib/audiobackend_android.h</itemPath>
+        <itemPath>../../core/oslib/audiobackend_coreaudio.cpp</itemPath>
+        <itemPath>../../core/oslib/audiobackend_coreaudio.h</itemPath>
+        <itemPath>../../core/oslib/audiobackend_directsound.cpp</itemPath>
+        <itemPath>../../core/oslib/audiobackend_directsound.h</itemPath>
+        <itemPath>../../core/oslib/audiobackend_oss.cpp</itemPath>
+        <itemPath>../../core/oslib/audiobackend_oss.h</itemPath>
+        <itemPath>../../core/oslib/audiobackend_pulseaudio.cpp</itemPath>
+        <itemPath>../../core/oslib/audiobackend_pulseaudio.h</itemPath>
+        <itemPath>../../core/oslib/audiostream.cpp</itemPath>
+        <itemPath>../../core/oslib/audiostream.h</itemPath>
+        <itemPath>../../core/oslib/oslib.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="profiler" displayName="profiler" projectFiles="true">
+        <itemPath>../../core/profiler/profiler.cpp</itemPath>
+        <itemPath>../../core/profiler/profiler.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="rec-x64" displayName="rec-x64" projectFiles="true">
+        <itemPath>../../core/rec-x64/rec_x64.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="reios" displayName="reios" projectFiles="true">
+        <itemPath>../../core/reios/descrambl.cpp</itemPath>
+        <itemPath>../../core/reios/descrambl.h</itemPath>
+        <itemPath>../../core/reios/gdrom_hle.cpp</itemPath>
+        <itemPath>../../core/reios/gdrom_hle.h</itemPath>
+        <itemPath>../../core/reios/reios.cpp</itemPath>
+        <itemPath>../../core/reios/reios.h</itemPath>
+        <itemPath>../../core/reios/reios_elf.cpp</itemPath>
+        <itemPath>../../core/reios/reios_elf.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="rend" displayName="rend" projectFiles="true">
+        <logicalFolder name="gles" displayName="gles" projectFiles="true">
+          <itemPath>../../core/rend/gles/gldraw.cpp</itemPath>
+          <itemPath>../../core/rend/gles/gles.cpp</itemPath>
+          <itemPath>../../core/rend/gles/gles.h</itemPath>
+          <itemPath>../../core/rend/gles/gltex.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="soft" displayName="soft" projectFiles="true">
+          <itemPath>../../core/rend/soft/softrend.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>../../core/rend/TexCache.cpp</itemPath>
+        <itemPath>../../core/rend/TexCache.h</itemPath>
+        <itemPath>../../core/rend/rend.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="webui" displayName="webui" projectFiles="true">
+        <itemPath>../../core/webui/server.cpp</itemPath>
+        <itemPath>../../core/webui/server.h</itemPath>
+      </logicalFolder>
+      <itemPath>../../core/build.h</itemPath>
+      <itemPath>../../core/nullDC.cpp</itemPath>
+      <itemPath>../../core/stdclass.cpp</itemPath>
+      <itemPath>../../core/stdclass.h</itemPath>
+      <itemPath>../../core/types.h</itemPath>
+    </logicalFolder>
+    <df root="." name="0">
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Важные файлы"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+    <Elem>/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0"
+                 commonFlags="-fsingle-precision-constant -O3 -ffast-math -fopenmp -msse4.1 -fno-rtti"/>
+        <element flagsID="1"
+                 commonFlags="-fsingle-precision-constant -g -O3 -ffast-math -fopenmp -msse4.1"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -j5 -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>reicast.elf</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../../core</pElem>
+              <pElem>../../core/deps</pElem>
+              <pElem>../../core/khronos</pElem>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>RELEASE</Elem>
+              <Elem>SUPPORT_X11</Elem>
+              <Elem>TARGET_LINUX_x64</Elem>
+              <Elem>TARGET_NO_AREC</Elem>
+              <Elem>USES_HOMEDIR</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../../core</pElem>
+              <pElem>../../core/deps</pElem>
+              <pElem>../../core/khronos</pElem>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>RELEASE</Elem>
+              <Elem>SUPPORT_X11</Elem>
+              <Elem>TARGET_LINUX_x64</Elem>
+              <Elem>TARGET_NO_AREC</Elem>
+              <Elem>TARGET_SOFTREND</Elem>
+              <Elem>USES_HOMEDIR</Elem>
+              <Elem>USE_ALSA</Elem>
+              <Elem>USE_EVDEV</Elem>
+              <Elem>USE_JOYSTICK</Elem>
+              <Elem>USE_OSS</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="../../core/cfg/cfg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/cfg/cl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/cfg/ini.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/chdpsr/cdipsr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/chdr/chdr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/coreio/coreio.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/crypto/md5.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/crypto/sha1.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/crypto/sha256.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/libelf/elf.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/libelf/elf32.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/libelf/elf64.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/deps/libpng/png.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngerror.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngget.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngmem.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngpread.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngread.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngrio.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngrtran.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngrutil.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngset.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngtrans.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngwio.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngwrite.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngwtran.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libpng/pngwutil.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/base64-decode.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/client-handshake.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/client-parser.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/client.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/context.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/extension-deflate-frame.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/extension-deflate-stream.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/extension.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/handshake.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/libwebsockets.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/lws-plat-unix.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/lws-plat-win.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/output.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/parsers.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/pollfd.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/server-handshake.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/server.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/service.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/libwebsocket/sha-1.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/adler32.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/compress.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/crc32.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/deflate.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/gzclose.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/gzlib.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/gzread.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/gzwrite.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/infback.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/inffast.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/inflate.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/inftrees.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/trees.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/uncompr.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/deps/zlib/zutil.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="1">
+        </cTool>
+      </item>
+      <item path="../../core/hw/aica/aica.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/aica/aica_if.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/aica/aica_mem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/aica/dsp.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/aica/sgc_if.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/arm7/arm7.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/arm7/arm_mem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/arm7/vbaARM.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/arm7/virt_arm.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/gdrom/gdrom_response.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/gdrom/gdromv3.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/holly/holly_intc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/holly/sb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/holly/sb_dma.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/holly/sb_mem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/maple/maple_cfg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/maple/maple_devs.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/maple/maple_helper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/maple/maple_if.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/mem/_vmem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/naomi/naomi.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/naomi/naomi_cart.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/Renderer_if.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/drkPvr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/pvr_mem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/pvr_regs.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/pvr_sb_regs.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/spg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/ta.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/ta_ctx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/pvr/ta_vtx.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/dyna/blockmanager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/dyna/decoder.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/dyna/driver.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/dyna/shil.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/interpr/sh4_fpu.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/interpr/sh4_interpreter.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/interpr/sh4_opcodes.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/bsc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/ccn.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/cpg.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/dmac.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/intc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/mmu.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/rtc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/serial.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/tmu.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/modules/ubc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_core_regs.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_interrupts.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_mem.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_mmr.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_opcode_list.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_rom.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/hw/sh4/sh4_sched.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/ImgReader.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/cdi.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/chd.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/common.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/gdi.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/imgread/ioctl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/khronos/GL3/gl3w.c" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="../../core/linux-dist/evdev.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux-dist/joystick.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux-dist/main.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux-dist/x11.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux/common.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux/context.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/linux/nixprof/nixprof.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/nullDC.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiobackend_alsa.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiobackend_coreaudio.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiobackend_directsound.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiobackend_oss.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiobackend_pulseaudio.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/oslib/audiostream.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/profiler/profiler.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rec-x64/rec_x64.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/reios/descrambl.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/reios/gdrom_hle.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/reios/reios.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/reios/reios_elf.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rend/TexCache.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rend/gles/gldraw.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rend/gles/gles.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rend/gles/gltex.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/rend/soft/softrend.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/stdclass.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="../../core/webui/server.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/sync_net.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/sync_net.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

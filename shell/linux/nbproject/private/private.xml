@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/hw/maple/maple_cfg.h</file>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/sync_net.cpp</file>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/x11.cpp</file>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/linux-dist/main.cpp</file>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/nullDC.cpp</file>
+            <file>file:/home/debian_stable_i686/home/programmeur/src/reicast-emulator/core/hw/maple/maple_cfg.cpp</file>
+        </group>
+    </open-files>
+</project-private>
