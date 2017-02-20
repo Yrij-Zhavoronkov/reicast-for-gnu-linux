@@ -83,11 +83,11 @@ void* libPvr_GetRenderSurface()
 
 
 //so.........
-u16 kcode[4] = {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF};
+u16 kcode[4] = {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF}; //word
 u8 rt[4] = {0, 0, 0, 0};
 u8 lt[4] = {0, 0, 0, 0};
 u32 vks[4];
-s8 joyx[4], joyy[4];
+s8 joyx[4], joyy[4];   //знаковй байт
 
 
 /*MY PAD MAPPING*/
