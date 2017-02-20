@@ -87,7 +87,8 @@ void input_x11_handle()
 			switch(e.type)
 			{
 				case KeyPress:
-                                                                                {
+                                                                                { 
+                                                                                    std::cout <<"Нажали:"<<e.xkey.keycode<<endl;
                                                                                     //вверх вниз, влево, вправо
                                                                                     for (APadEl=0; APadEl<4; APadEl++)
                                                                                     {
@@ -101,13 +102,41 @@ void input_x11_handle()
                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Triggers[1])
                                                                                        lt[X11KeyboardNum] =255;
                                                                                     
+                                                                                    //DPAD
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[0])
+                                                                                       kcode[X11KeyboardNum] &= ~DC_DPAD_UP;
+                                                                                    
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[1])
+                                                                                       kcode[X11KeyboardNum] &=~DC_DPAD_DOWN;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[2])
+                                                                                       kcode[X11KeyboardNum] &=~DC_DPAD_LEFT;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[3])
+                                                                                       kcode[X11KeyboardNum] &=~DC_DPAD_RIGHT;
                                                                                    
-                                                                                   //keys
+                                                                                    //Кнопки...
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[0])
+                                                                                       kcode[X11KeyboardNum] &=~DC_BTN_A;
+                                                                                    
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[1])
+                                                                                       kcode[X11KeyboardNum] &=~DC_BTN_B;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[2])
+                                                                                       kcode[X11KeyboardNum] &=~DC_BTN_Y;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[3])
+                                                                                       kcode[X11KeyboardNum] &=~DC_BTN_X;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[4])
+                                                                                       kcode[X11KeyboardNum] &=~DC_BTN_START; 
+
                                                                                    break;
                                                                                 }
 				case KeyRelease:
                                     
                                                                                 {
+                                                                                    std::cout <<"Отпустили:"<<e.xkey.keycode<<endl;
                                                                                    //вверх вниз, влево, вправо
                                                                                     for (APadEl=0; APadEl<4; APadEl++)
                                                                                     {
@@ -121,41 +150,48 @@ void input_x11_handle()
                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Triggers[1])
                                                                                        lt[X11KeyboardNum] =0;
                                                                                     
+                                                                                    
+                                                                                     //DPAD
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[0])
+                                                                                       kcode[X11KeyboardNum] |=DC_DPAD_UP;
+                                                                                    
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[1])
+                                                                                       kcode[X11KeyboardNum] |=DC_DPAD_DOWN;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[2])
+                                                                                       kcode[X11KeyboardNum] |=DC_DPAD_LEFT;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].DPad[3])
+                                                                                       kcode[X11KeyboardNum] |=DC_DPAD_RIGHT;
+                                                                                   
+                                                                                    //Кнопки...
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[0])
+                                                                                       kcode[X11KeyboardNum] |=DC_BTN_A;
+                                                                                    
+                                                                                    if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[1])
+                                                                                       kcode[X11KeyboardNum] |=DC_BTN_B;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[2])
+                                                                                       kcode[X11KeyboardNum] |=DC_BTN_Y;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[3])
+                                                                                       kcode[X11KeyboardNum] |=DC_BTN_X;
+                                                                                    
+                                                                                     if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].Buttons[4])
+                                                                                       kcode[X11KeyboardNum] |=DC_BTN_START; 
+                                                                                    
+                                                                                    
                                                                                     break;
                                                                                 }
-					/*if (e.type == KeyRelease && e.xkey.keycode == 9) // ESC button
-					{
-						die("death by escape key");
-					}
-
-					else if (e.type == KeyRelease && e.xkey.keycode == 95) // F11 button
-					{
-						x11_fullscreen = !x11_fullscreen;
-						x11_window_set_fullscreen(x11_fullscreen);
-					}
-					else
-					{
-						int dc_key = x11_keymap[e.xkey.keycode];
-						if (e.type == KeyPress)
-						{
-							kcode[0] &= ~dc_key;
-						}
-						else
-						{
-							kcode[0] |= dc_key;
-						}
-					}
-					//printf("KEY: %d -> %d: %d\n",e.xkey.keycode, dc_key, x11_dc_buttons );
-					break;*/
-			}
+ 			}
                                             //Обновление информации об осях
                                             tempX=0;
                                             tempY=0;
                                             
-                                            if (APadEmu[0]) tempX=127; 
-                                            if (APadEmu[1]) tempX-=127;
-                                            if (APadEmu[2]) tempY=-127; 
-                                            if (APadEmu[3]) tempY+=127;
+                                            if (APadEmu[0] ^ MainDCPADMap[X11KeyboardNum].InvertY) tempY=-127; 
+                                            if (APadEmu[1] ^ MainDCPADMap[X11KeyboardNum].InvertY) tempY+=127;
+                                            if (APadEmu[2] ^ MainDCPADMap[X11KeyboardNum].InvertX) tempX=-127; 
+                                            if (APadEmu[3] ^ MainDCPADMap[X11KeyboardNum].InvertX) tempX+=127;
                                             
                                             joyx[X11KeyboardNum]=tempX;                                           
                                             joyy[X11KeyboardNum]=tempY;
@@ -166,25 +202,7 @@ void input_x11_handle()
 
 void input_x11_init()
 {
-    /*	x11_keymap[113] = DC_DPAD_LEFT;
-	x11_keymap[114] = DC_DPAD_RIGHT;
-
-	x11_keymap[111] = DC_DPAD_UP;
-	x11_keymap[116] = DC_DPAD_DOWN;
-
-	x11_keymap[53] = DC_BTN_X;
-	x11_keymap[54] = DC_BTN_B;
-	x11_keymap[55] = DC_BTN_A;
-
-	
-	//TODO: Fix sliders
-	x11_keymap[38] = DPad_Down;
-	x11_keymap[39] = DPad_Down;
-	
-
-	x11_keymap[36] = DC_BTN_START;*/
-
-	x11_keyboard_input = cfgLoadInt("input", "enable_x11_keyboard", 1); 
+    	x11_keyboard_input = cfgLoadInt("input", "enable_x11_keyboard", 1); 
 }
 
 void x11_window_create()
