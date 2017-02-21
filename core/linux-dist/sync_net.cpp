@@ -22,6 +22,16 @@ typedef char  TIO_bufer[4096];
 
 using namespace std;
 
+char Dec2Char(unsigned char dec_num) // 0 -> '0'
+{
+    if (dec_num>9) return 0;
+    else
+    {
+       return ('0'+dec_num); 
+    }   
+}
+
+
 char CreateSock(void)
 {
     //define
@@ -94,8 +104,7 @@ void ConfigurePADS(DCPads &CfgPads)   //получим параметры эму
         //шлем запрос на сервер!
         string message="GET_PADS_DATA";
         TIO_bufer in_buf;   
-        string branch="";       
-      
+     
     
         std::cout <<">>GET_PADS_DATA\n";
      
@@ -181,22 +190,17 @@ void ConfigurePADS(DCPads &CfgPads)   //получим параметры эму
          
          //один пульт загрузили! Цикл!       
           
-         
-        
-         branch="evdev_device_id_"+std::to_string(cur_pad+1);
+           
                 
-         if (CfgPads[cur_pad].DeviceEvNumber>1) //те уже реальное устройство
+        /* if (CfgPads[cur_pad].DeviceEvNumber>1) //те уже реальное устройство
              MycfgSaveInt("input",  branch, CfgPads[cur_pad].DeviceEvNumber);
          else 
-             MycfgSaveInt("input",branch, -1);   
+             MycfgSaveInt("input",branch, -1);  */ 
         
           std::cout <<"END PAD="<<cur_pad<<endl;
           cur_pad++;
      };
-     
- 
-     
-     
+  
 };
 
 

@@ -88,7 +88,6 @@ void input_x11_handle()
 			{
 				case KeyPress:
                                                                                 { 
-                                                                                    std::cout <<"Нажали:"<<e.xkey.keycode<<endl;
                                                                                     //вверх вниз, влево, вправо
                                                                                     for (APadEl=0; APadEl<4; APadEl++)
                                                                                     {
@@ -136,8 +135,7 @@ void input_x11_handle()
 				case KeyRelease:
                                     
                                                                                 {
-                                                                                    std::cout <<"Отпустили:"<<e.xkey.keycode<<endl;
-                                                                                   //вверх вниз, влево, вправо
+                                                                                    //вверх вниз, влево, вправо
                                                                                     for (APadEl=0; APadEl<4; APadEl++)
                                                                                     {
                                                                                         if (e.xkey.keycode==MainDCPADMap[X11KeyboardNum].SPad[APadEl])

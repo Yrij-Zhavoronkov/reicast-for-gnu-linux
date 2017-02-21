@@ -4,6 +4,7 @@
 #include "linux-dist/evdev.h"
 #include "linux-dist/main.h"
 #include "cfg/ini.h"
+#include "sync_net.h"
 #include <vector>
 #include <map>
 #include <dlfcn.h>
@@ -105,9 +106,9 @@
 		this->rumble_effect_id = -1;
 	}
 
-	std::map<std::string, EvdevControllerMapping> loaded_mappings;
+	std::map<std::string, EvdevControllerMapping> loaded_mappings;  //!!!!!!!!
 
-	int load_keycode(ConfigFile* cfg, string section, string dc_key)   ///!!!!!!!!!!!!!!!!!!
+	/*int load_keycode(ConfigFile* cfg, string section, string dc_key)   ///!!!!!!!!!!!!!!!!!!
 	{
 		int code = -1;
 
@@ -152,56 +153,50 @@
 		}
 		return code;
 	}
-
-	EvdevControllerMapping load_mapping(FILE* fd)   //!!!!!!!!!!!!!!!
+                    */
+          
+	EvdevControllerMapping load_mapping(DCPadKeymap &PadMap)   //обновлено!
 	{
-		ConfigFile mf;
-		mf.parse(fd);
-
-		EvdevControllerMapping mapping = {
-			mf.get("emulator", "mapping_name", "<Unknown>").c_str(),
-			load_keycode(&mf, "dreamcast", "btn_a"),
-			load_keycode(&mf, "dreamcast", "btn_b"),
-			load_keycode(&mf, "dreamcast", "btn_c"),
-			load_keycode(&mf, "dreamcast", "btn_d"),
-			load_keycode(&mf, "dreamcast", "btn_x"),
-			load_keycode(&mf, "dreamcast", "btn_y"),
-			load_keycode(&mf, "dreamcast", "btn_z"),
-			load_keycode(&mf, "dreamcast", "btn_start"),
-			load_keycode(&mf, "emulator",  "btn_escape"),
-			load_keycode(&mf, "dreamcast", "btn_dpad1_left"),
-			load_keycode(&mf, "dreamcast", "btn_dpad1_right"),
-			load_keycode(&mf, "dreamcast", "btn_dpad1_up"),
-			load_keycode(&mf, "dreamcast", "btn_dpad1_down"),
-			load_keycode(&mf, "dreamcast", "btn_dpad2_left"),
-			load_keycode(&mf, "dreamcast", "btn_dpad2_right"),
-			load_keycode(&mf, "dreamcast", "btn_dpad2_up"),
-			load_keycode(&mf, "dreamcast", "btn_dpad2_down"),
-			load_keycode(&mf, "compat",    "btn_trigger_left"),
-			load_keycode(&mf, "compat",    "btn_trigger_right"),
-			load_keycode(&mf, "compat",    "axis_dpad1_x"),
-			load_keycode(&mf, "compat",    "axis_dpad1_y"),
-			load_keycode(&mf, "compat",    "axis_dpad2_x"),
-			load_keycode(&mf, "compat",    "axis_dpad2_y"),
-			load_keycode(&mf, "dreamcast", "axis_x"),
-			load_keycode(&mf, "dreamcast", "axis_y"),
-			load_keycode(&mf, "dreamcast", "axis_trigger_left"),
-			load_keycode(&mf, "dreamcast", "axis_trigger_right"),
-			mf.get_bool("compat", "axis_x_inverted", false),
-			mf.get_bool("compat", "axis_y_inverted", false),
-			mf.get_bool("compat", "axis_trigger_left_inverted", false),
-			mf.get_bool("compat", "axis_trigger_right_inverted", false)
+                		EvdevControllerMapping mapping = {
+			  PadMap.Buttons[0], //a 
+                                                        PadMap.Buttons[1], //b 
+                                                        PadMap.Buttons[3], //x
+                                                        PadMap.Buttons[2], //y
+                                                        PadMap.Buttons[4], //start 
+                          
+                                                        PadMap.DPad[2], //Dleft   
+                                                        PadMap.DPad[3], //DRigth
+                                                        PadMap.DPad[0], //DUp
+                                                        PadMap.DPad[1], //Ddown
+                          
+                                                        PadMap.Triggers[0], // Btn_Trigger_Left;
+                                                        PadMap.Triggers[1], // Btn_Trigger_Right;
+                          
+                                                        /*AS ANALOG*/                                                        
+                                                        PadMap.DPad[2], //DPadX                                                        
+                                                        PadMap.DPad[0], //DPadY
+                                                        
+                                                        PadMap.SPad[2],     //Axis_Analog_X    Работают
+                                                        PadMap.SPad[0],     //Axis_Analog_Y    Работают
+                          
+                                                        PadMap.Triggers[0], // Axis_Trigger_Left
+                                                        PadMap.Triggers[1], // Axis_Trigger_Right                         
+                                                       
+                                                        PadMap.InvertX,       //Axis_Analog_X_Inverted;
+                                                        PadMap.InvertY,       //Axis_Analog_Y_Inverted;
+                                                        0,  //Axis_Trigger_Left_Inverted
+                                                        0
 		};
 		return mapping;
 	}
 
-	int input_evdev_init(EvdevController* controller, const char* device, const char* custom_mapping_fname = NULL)
+	int input_evdev_init(EvdevController* controller, const char* device, DCPadKeymap &PadMap)  //обновлено
 	{
 		load_libevdev();
 
 		char name[256] = "Unknown";
 
-		printf("evdev: Trying to open device at '%s'\n", device);
+		printf("evdev: Trying to open device at '%s'\n", device);  
 
 		int fd = open(device, O_RDWR);
 
@@ -218,75 +213,12 @@
 				printf("evdev: Found '%s' at '%s'\n", name, device);
 
 				controller->fd = fd;
-
-				const char* mapping_fname;
-
-				if(custom_mapping_fname != NULL)
-				{
-					mapping_fname = custom_mapping_fname;
-				}
-				else
-				{
-					#if defined(TARGET_PANDORA)
-						mapping_fname = "controller_pandora.cfg";
-					#elif defined(TARGET_GCW0)
-						mapping_fname = "controller_gcwz.cfg";
-					#else
-						if (strcmp(name, "Microsoft X-Box 360 pad") == 0 ||
-							strcmp(name, "Xbox 360 Wireless Receiver") == 0 ||
-							strcmp(name, "Xbox 360 Wireless Receiver (XBOX)") == 0)
-						{
-							mapping_fname = "controller_xpad.cfg";
-						}
-						else if (strstr(name, "Xbox Gamepad (userspace driver)") != NULL)
-						{
-							mapping_fname = "controller_xboxdrv.cfg";
-						}
-						else if (strstr(name, "keyboard") != NULL ||
-								 strstr(name, "Keyboard") != NULL)
-						{
-							mapping_fname = "keyboard.cfg";
-						}
-						else
-						{
-							mapping_fname = "controller_generic.cfg";
-						}
-					#endif
-				}
-				if(loaded_mappings.count(string(mapping_fname)) == 0)
-				{
-					FILE* mapping_fd = NULL;
-					if(mapping_fname[0] == '/')
-					{
-						// Absolute mapping
-						mapping_fd = fopen(mapping_fname, "r");
-					}
-					else
-					{
-						// Mapping from ~/.reicast/mappings/
-						size_t size_needed = snprintf(NULL, 0, EVDEV_MAPPING_PATH, mapping_fname) + 1;
-						char* mapping_path = (char*)malloc(size_needed);
-						sprintf(mapping_path, EVDEV_MAPPING_PATH, mapping_fname);
-						mapping_fd = fopen(get_readonly_data_path(mapping_path).c_str(), "r");
-						free(mapping_path);
-					}
-					
-					if(mapping_fd != NULL)
-					{
-						printf("evdev: reading mapping file: '%s'\n", mapping_fname);
-						loaded_mappings.insert(std::make_pair(string(mapping_fname), load_mapping(mapping_fd)));
-						fclose(mapping_fd);
-
-					}
-					else
-					{
-						printf("evdev: unable to open mapping file '%s'\n", mapping_fname);
-						perror("evdev");
-						return -3;
-					}
-				}
-				controller->mapping = &loaded_mappings.find(string(mapping_fname))->second;
-				printf("evdev: Using '%s' mapping\n", controller->mapping->name);
+                                
+                                                                        //мап уже подгружен в кеш, возьми его
+                                                                        loaded_mappings.insert(std::make_pair(string(name), load_mapping(PadMap)));
+                                
+				controller->mapping = &loaded_mappings.find(string(name))->second;
+				printf("evdev: управление загружено для пульта '%s' \n",name);
 				controller->init();
 
 				return 0;
@@ -299,7 +231,7 @@
 		}
 	}
 
-	bool input_evdev_handle(EvdevController* controller, u32 port)
+	bool input_evdev_handle(EvdevController* controller, u32 port)  //UPDATED
 	{
 		#define SET_FLAG(field, mask, expr) field =((expr) ? (field & ~mask) : (field | mask))
 		if (controller->fd < 0 || controller->mapping == NULL)
@@ -318,20 +250,15 @@
 						SET_FLAG(kcode[port], DC_BTN_A, ie.value);
 					} else if (ie.code == controller->mapping->Btn_B) {
 						SET_FLAG(kcode[port], DC_BTN_B, ie.value);
-					} else if (ie.code == controller->mapping->Btn_C) {
-						SET_FLAG(kcode[port], DC_BTN_C, ie.value);
-					} else if (ie.code == controller->mapping->Btn_D) {
-						SET_FLAG(kcode[port], DC_BTN_D, ie.value);
+					
 					} else if (ie.code == controller->mapping->Btn_X) {
 						SET_FLAG(kcode[port], DC_BTN_X, ie.value);
 					} else if (ie.code == controller->mapping->Btn_Y) {
 						SET_FLAG(kcode[port], DC_BTN_Y, ie.value);
-					} else if (ie.code == controller->mapping->Btn_Z) {
-						SET_FLAG(kcode[port], DC_BTN_Z, ie.value);
+					
 					} else if (ie.code == controller->mapping->Btn_Start) {
 						SET_FLAG(kcode[port], DC_BTN_START, ie.value);
-					} else if (ie.code == controller->mapping->Btn_Escape) {
-						die("death by escape key");
+					
 					} else if (ie.code == controller->mapping->Btn_DPad_Left) {
 						SET_FLAG(kcode[port], DC_DPAD_LEFT, ie.value);
 					} else if (ie.code == controller->mapping->Btn_DPad_Right) {
@@ -340,14 +267,6 @@
 						SET_FLAG(kcode[port], DC_DPAD_UP, ie.value);
 					} else if (ie.code == controller->mapping->Btn_DPad_Down) {
 						SET_FLAG(kcode[port], DC_DPAD_DOWN, ie.value);
-					} else if (ie.code == controller->mapping->Btn_DPad2_Left) {
-						SET_FLAG(kcode[port], DC_DPAD2_LEFT, ie.value);
-					} else if (ie.code == controller->mapping->Btn_DPad2_Right) {
-						SET_FLAG(kcode[port], DC_DPAD2_RIGHT, ie.value);
-					} else if (ie.code == controller->mapping->Btn_DPad2_Up) {
-						SET_FLAG(kcode[port], DC_DPAD2_UP, ie.value);
-					} else if (ie.code == controller->mapping->Btn_DPad2_Down) {
-						SET_FLAG(kcode[port], DC_DPAD2_DOWN, ie.value);
 					} else if (ie.code == controller->mapping->Btn_Trigger_Left) {
 						lt[port] = (ie.value ? 255 : 0);
 					} else if (ie.code == controller->mapping->Btn_Trigger_Right) {
@@ -372,7 +291,7 @@
 								SET_FLAG(kcode[port], DC_DPAD_RIGHT, 1);
 								break;
 						}
-					}
+					}                                                                                        
 					else if (ie.code == controller->mapping->Axis_DPad_Y)
 					{
 						switch(ie.value)
@@ -390,7 +309,7 @@
 								SET_FLAG(kcode[port], DC_DPAD_DOWN, 1);
 								break;
 						}
-					}
+					}/*
 					else if (ie.code == controller->mapping->Axis_DPad2_X)
 					{
 						switch(ie.value)
@@ -427,7 +346,8 @@
 								break;
 						}
 					}
-					else if (ie.code == controller->mapping->Axis_Analog_X)
+					else */
+                                                                                          if (ie.code == controller->mapping->Axis_Analog_X)
 					{
 						joyx[port] = (controller->data_x.convert(ie.value) + 128);
 					}

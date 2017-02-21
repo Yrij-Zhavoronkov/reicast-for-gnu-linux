@@ -115,7 +115,7 @@ void emit_WriteCodeCache();
 void SetupInput()
 {
 	#if defined(USE_EVDEV)
-		int evdev_device_id[4] = { -1, -1, -1, -1 };
+		//int evdev_device_id[4] = { -1, -1, -1, -1 };  //!!!
 		size_t size_needed;
 		int port, i;
 
@@ -123,11 +123,61 @@ void SetupInput()
 
 		for (port = 0; port < 4; port++)
 		{
-			size_needed = snprintf(NULL, 0, EVDEV_DEVICE_CONFIG_KEY, port+1) + 1;
-			char* evdev_config_key = (char*)malloc(size_needed);
-			sprintf(evdev_config_key, EVDEV_DEVICE_CONFIG_KEY, port+1);
-			evdev_device_id[port] = cfgLoadInt("input", evdev_config_key, EVDEV_DEFAULT_DEVICE_ID(port+1));
-			free(evdev_config_key);
+			//size_needed = snprintf(NULL, 0, EVDEV_DEVICE_CONFIG_KEY, port+1) + 1;
+			//char* evdev_config_key = (char*)malloc(size_needed);
+			//sprintf(evdev_config_key, EVDEV_DEVICE_CONFIG_KEY, port+1);
+			//evdev_device_id[port] = cfgLoadInt("input", evdev_config_key, EVDEV_DEFAULT_DEVICE_ID(port+1));
+			//free(evdev_config_key);
+
+			// Check if the same device is already in use on another port
+			//if (evdev_device_id[port] < 0)
+                                                      if (MainDCPADMap[port].DeviceEvNumber<2)  //0 - нет; 1-клава....
+			{
+				printf("evdev mod: Controller %d disabled by config.\n", port + 1);
+			}
+			else
+			{
+				for (i = 0; i < port; i++)
+				{
+						if (MainDCPADMap[port].DeviceEvNumber == MainDCPADMap[i].DeviceEvNumber)
+						{
+					                        die("You can't assign the same device to multiple ports!\n");
+						}
+				}
+
+				size_needed = snprintf(NULL, 0, EVDEV_DEVICE_STRING, MainDCPADMap[port].DeviceEvNumber) + 1;
+				evdev_device = (char*)malloc(size_needed);
+				sprintf(evdev_device, EVDEV_DEVICE_STRING, MainDCPADMap[port].DeviceEvNumber);
+
+				size_needed = snprintf(NULL, 0, EVDEV_MAPPING_CONFIG_KEY, port+1) + 1;
+				/*evdev_config_key = (char*)malloc(size_needed);
+				sprintf(evdev_config_key, EVDEV_MAPPING_CONFIG_KEY, port+1);
+				const char* mapping = (cfgExists("input", evdev_config_key) == 2 ? cfgLoadStr("input", evdev_config_key, "").c_str() : NULL);
+				free(evdev_config_key);  */
+
+				input_evdev_init(&evdev_controllers[port], evdev_device, MainDCPADMap[port]);  //mapping
+
+				free(evdev_device);
+			}
+		}
+	#endif
+
+                /*void SetupInput()
+{
+	#if defined(USE_EVDEV)
+		//int evdev_device_id[4] = { -1, -1, -1, -1 };  //!!!
+		size_t size_needed;
+		int port, i;
+
+		char* evdev_device;
+
+		for (port = 0; port < 4; port++)
+		{
+			//size_needed = snprintf(NULL, 0, EVDEV_DEVICE_CONFIG_KEY, port+1) + 1;
+			//char* evdev_config_key = (char*)malloc(size_needed);
+			//sprintf(evdev_config_key, EVDEV_DEVICE_CONFIG_KEY, port+1);
+			//evdev_device_id[port] = cfgLoadInt("input", evdev_config_key, EVDEV_DEFAULT_DEVICE_ID(port+1));
+			//free(evdev_config_key);
 
 			// Check if the same device is already in use on another port
 			if (evdev_device_id[port] < 0)
@@ -159,9 +209,9 @@ void SetupInput()
 				free(evdev_device);
 			}
 		}
-	#endif
+	#endif*/
 
-	#if defined(USE_JOYSTICK)
+	/*#if defined(USE_JOYSTICK)   DEPRECATED
 		int joystick_device_id = cfgLoadInt("input", "joystick_device_id", JOYSTICK_DEFAULT_DEVICE_ID);
 		if (joystick_device_id < 0) {
 			puts("Legacy Joystick input disabled by config.\n");
@@ -174,7 +224,7 @@ void SetupInput()
 			joystick_fd = input_joystick_init(joystick_device);
 			free(joystick_device);
 		}
-	#endif
+	#endif*/
 
 	#if defined(SUPPORT_X11)
 		input_x11_init();
@@ -500,7 +550,7 @@ int main(int argc, wchar* argv[])
                   }
                   else
                   {
-                  cout << "Свези нет.. выход";    
+                  cout << "Связи нет.. выход";    
                   return 25;
                   }
                  
