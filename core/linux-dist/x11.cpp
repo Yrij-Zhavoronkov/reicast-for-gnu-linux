@@ -200,7 +200,17 @@ void input_x11_handle()
 
 void input_x11_init()
 {
-    	x11_keyboard_input = cfgLoadInt("input", "enable_x11_keyboard", 1); 
+    	//x11_keyboard_input = cfgLoadInt("input", "enable_x11_keyboard", 1);
+    
+                            //обновить инфу о клаве   
+                            x11_keyboard_input=false;
+                             for (int i=0; i<4; i++)                              
+                                 if (MainDCPADMap[i].DeviceEvNumber==1) 
+                                 { 
+                                    X11KeyboardNum=i;
+                                    x11_keyboard_input=true;
+                                    break;
+                                 }
 }
 
 void x11_window_create()

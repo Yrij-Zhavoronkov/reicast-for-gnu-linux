@@ -13,7 +13,7 @@
 #include "hw/maple/maple_cfg.h"
 #include "hw/sh4/sh4_mem.h"
 
-#include "webui/server.h"
+//#include "webui/server.h"
 #include "hw/naomi/naomi_cart.h"
 #include "linux-dist/sync_net.h"
 
@@ -118,7 +118,7 @@ void plugins_Reset(bool Manual)
 	//libExtDevice_Reset(Manual);
 }
 
-#if !defined(TARGET_NO_WEBUI)
+/*#if !defined(TARGET_NO_WEBUI)
 
 void* webui_th(void* p)
 {
@@ -127,7 +127,7 @@ void* webui_th(void* p)
 }
 
 cThread webui_thd(&webui_th,0);
-#endif
+#endif */
 
 int dc_init(int argc,wchar* argv[])
 {
@@ -140,9 +140,9 @@ int dc_init(int argc,wchar* argv[])
 		return -1;
 	}
 
-#if !defined(TARGET_NO_WEBUI)
+/*#if !defined(TARGET_NO_WEBUI)
 	webui_thd.Start();
-#endif
+#endif  */
 
 	if(ParseCommandLine(argc,argv))
 	{
@@ -196,7 +196,7 @@ int dc_init(int argc,wchar* argv[])
 	
 	mem_map_default();
 
-                  //создадим девайсы
+                  //создадим девайсы  
                   extern DCPads MainDCPADMap;
                     
                   for (char dport=0; dport<3; dport++)

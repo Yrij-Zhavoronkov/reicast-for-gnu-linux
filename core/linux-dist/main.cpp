@@ -92,7 +92,7 @@ s8 joyx[4], joyy[4];   //знаковй байт
 
 /*MY PAD MAPPING*/
 DCPads MainDCPADMap;
-char X11KeyboardNum=5; //5-за пределами
+char X11KeyboardNum=4; //4-за пределами   ports=0.1.2.3
 
 
 void emit_WriteCodeCache();
@@ -112,7 +112,7 @@ void emit_WriteCodeCache();
 	static int joystick_fd = -1; // Joystick file descriptor
 #endif
 
-void SetupInput()
+void SetupInput()  //обновлено
 {
 	#if defined(USE_EVDEV)
 		//int evdev_device_id[4] = { -1, -1, -1, -1 };  //!!!
@@ -310,43 +310,6 @@ void common_linux_setup();
 int dc_init(int argc,wchar* argv[]);
 void dc_run();
 
-#ifdef TARGET_PANDORA
-	void gl_term();
-
-	void clean_exit(int sig_num)
-	{
-		void* array[10];
-		size_t size;
-
-		if (joystick_fd >= 0) { close(joystick_fd); }
-		for (int port = 0; port < 4 ; port++)
-		{
-			if (evdev_controllers[port]->fd >= 0)
-			{
-				close(evdev_controllers[port]->fd);
-			}
-		}
-
-		// Close EGL context ???
-		if (sig_num!=0)
-		{
-			gl_term();
-		}
-
-		x11_window_destroy():
-
-		// finish cleaning
-		if (sig_num!=0)
-		{
-			write(2, "\nSignal received\n", sizeof("\nSignal received\n"));
-
-			size = backtrace(array, 10);
-			backtrace_symbols_fd(array, size, STDERR_FILENO);
-			exit(1);
-		}
-	}
-#endif
-
 string find_user_config_dir()
 {
 	#ifdef USES_HOMEDIR
@@ -526,19 +489,7 @@ int main(int argc, wchar* argv[])
                       cout << "соединение прошло успешно\n";
                             //загружаем конфиги с сервера
                              ConfigurePADS(MainDCPADMap);
-                             
-                             //обновить инфу о клаве                                                              
-                             for (int i=0; i<4; i++)  
-                             {
-                                 if (MainDCPADMap[i].DeviceEvNumber==1) 
-                                 { 
-                                    X11KeyboardNum=i;
-                                    break;
-                                 }
-                             }
-                            
-                            //это запретит клавиатуру если ее мы не передали) 
-                            cfgSaveInt("input", "enable_x11_keyboard", (X11KeyboardNum<4));
+                      
                             cout << "Маппинги загружены\n";                               
                   
                   
@@ -558,7 +509,7 @@ int main(int argc, wchar* argv[])
                    //инициализация устройств
 	dc_init(argc,argv);                 
         
-                   //!!!!!!!!!!!!!!!!!
+                   //обновлено
 	SetupInput();
 
 	#if !defined(TARGET_EMSCRIPTEN)

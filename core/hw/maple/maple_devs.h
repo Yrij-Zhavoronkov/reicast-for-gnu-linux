@@ -20,7 +20,7 @@ struct maple_device
 	u8 maple_port;          //raw maple port
 	u8 bus_port;            //0 .. 5
 	u8 bus_id;              //0 .. 3
-	wchar logical_port[3];  //A0, etc
+	//wchar logical_port[3];  //A0, etc
 	IMapleConfigMap* config;
 
 	//fill in the info

@@ -4,6 +4,7 @@
 #include "maple_devs.h"
 #include "maple_cfg.h"
 #include <time.h>
+#include <iostream>
 
 #if _ANDROID
 #include <android/log.h>
@@ -14,6 +15,7 @@
 #endif
 
 #include "deps/zlib/zlib.h"
+#include "linux-dist/sync_net.h"
 
 const char* maple_sega_controller_name = "Dreamcast Controller";
 const char* maple_sega_vmu_name = "Visual Memory";
@@ -82,14 +84,17 @@ enum MapleDeviceRV
 #define SWAP32(a) ((((a) & 0xff) << 24)  | (((a) & 0xff00) << 8) | (((a) >> 8) & 0xff00) | (((a) >> 24) & 0xff))
 
 //fill in the info
-void maple_device::Setup(u32 prt)
+void maple_device::Setup(u32 prt)  //пост настройка (убери logical_port!!!)
 {
 	maple_port = prt;
-	bus_port = maple_GetPort(prt);
-	bus_id = maple_GetBusId(prt);
-	logical_port[0] = 'A' + bus_id;
-	logical_port[1] = bus_port == 5 ? 'x' : '1' + bus_port;
-	logical_port[2] = 0;
+	bus_port = maple_GetPort(prt); //лог порт КП={0 1}
+	bus_id = maple_GetBusId(prt);  //индекс пульта 0 1 2 3
+      
+        
+	/*logical_port[0] = 'A' + bus_id;   //A B C D
+	logical_port[1] =((bus_port == 5) ? 'x' : '1' + bus_port); //1 2
+	logical_port[2] = 0; */
+                 // logical_port[0]=prt;
 }
 maple_device::~maple_device()
 {
@@ -265,22 +270,28 @@ u8 vmu_default[] = {
 	0x77,0x19,0x06,0xef,
 };
 
-struct maple_sega_vmu: maple_base
+struct maple_sega_vmu: maple_base   //структура карты памяти
 {
-	FILE* file;
-	u8 flash_data[128*1024];
+	FILE* file; 
+	u8 flash_data[128*1024]; 
 	u8 lcd_data[192];
 	u8 lcd_data_decoded[48*32];
 	
-	virtual void OnSetup()
+	virtual void OnSetup()    
 	{
+                                    extern DCPads MainDCPADMap;
+                                    
 		memset(flash_data,0,sizeof(flash_data));
 		memset(lcd_data,0,sizeof(lcd_data));
-		wchar tempy[512];
+                                    
+		/*wchar tempy[512];
 		sprintf(tempy,"/vmu_save_%s.bin",logical_port);
+                
 		string apath=get_writable_data_path(tempy);
-
-		file=fopen(apath.c_str(),"rb+");
+                                    //if bus_port in [0 1]*/
+                                    string apath=(bus_port<3)?MainDCPADMap[bus_id].MemoryCardPath[bus_port]:"";
+  
+                                    file=fopen(apath.c_str(),"rb+");
 		if (!file)
 		{
 			printf("Unable to open VMU save file \"%s\", creating new file\n",apath.c_str());
@@ -521,7 +532,7 @@ struct maple_sega_vmu: maple_base
 						}
 						else
 						{
-							printf("Failed to save VMU %s data\n",logical_port);
+							printf("Failed to save VMU at PAD %d port %d data\n",bus_id, bus_port);
 						}
 						return MDRS_DeviceReply;//just ko
 					}
@@ -1376,7 +1387,7 @@ struct maple_naomi_jamma : maple_sega_controller
 		return MDRE_UnknownFunction;
 	}
 };
-maple_device* maple_Create(MapleDeviceType type)
+maple_device* maple_Create(MapleDeviceType type) //создание устройст (пульт / карта памяти)
 {
 	maple_device* rv=0;
 	switch(type)
@@ -1391,6 +1402,7 @@ maple_device* maple_Create(MapleDeviceType type)
 
 	case MDT_SegaVMU:
 		rv = new maple_sega_vmu();
+                 
 		break;
 
 	case MDT_PurupuruPack:

@@ -64,12 +64,12 @@ struct MapleConfigMap : IMapleConfigMap
 	}
 };
 
-void mcfg_Create(MapleDeviceType type,u32 bus,u32 port)
-{
-	maple_device* dev=maple_Create(type);
+void mcfg_Create(MapleDeviceType type,u32 bus,u32 port)   //bus = лог порт пульта!!! 0 1 2 3
+{                
+	maple_device* dev=maple_Create(type); //здесь?
 	dev->Setup(maple_GetAddress(bus,port));
 	dev->config = new MapleConfigMap(dev);
-	dev->OnSetup();
+	dev->OnSetup();                                             
 	MapleDevices[bus][port]=dev;
 }
 

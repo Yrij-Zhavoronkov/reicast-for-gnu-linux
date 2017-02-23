@@ -207,7 +207,7 @@ void mem_Reset(bool Manual)
 	if (!Manual)
 	{
 		//fill mem w/ 0's
-		mem_b.Zero();
+		mem_b.Zero();   /////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 
 	//Reset registers
