@@ -18,6 +18,6 @@ void  cfgSaveStr(const wchar * lpSection, const wchar * lpKey, const wchar * lpS
 s32  cfgExists(const wchar * Section, const wchar * Key);
 void cfgSetVirtual(const wchar * lpSection, const wchar * lpKey, const wchar * lpString);
 
-bool ParseCommandLine(int argc,wchar* argv[]);
+//bool ParseCommandLine(int argc,wchar* argv[]);
 
 void  MycfgSaveInt(string Section, string Key, s32 Int);

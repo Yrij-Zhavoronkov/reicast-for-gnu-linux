@@ -500,7 +500,11 @@ int main(int argc, wchar* argv[])
                              {cout <<"Не удалось загрузить конфиги";
                                return 22;                             
                              }
-                  
+                             
+                             //получаем полное имя образа для запуска
+                             GiveMeIsoName();
+                            
+                 
                            pthread_t Sock_thread; //дескриптор сокета
                             void* Sock_data = NULL;  //параметр потока
                             //Создаем событие (синхронизация)
@@ -511,7 +515,7 @@ int main(int argc, wchar* argv[])
                   
                    //инициализация устройств
 	dc_init(argc,argv);                 
-        
+
                    //обновлено
 	SetupInput();
 

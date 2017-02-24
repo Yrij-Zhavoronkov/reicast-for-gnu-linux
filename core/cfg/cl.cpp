@@ -107,7 +107,7 @@ int showhelp(wchar** arg,int cl)
 
 	return 0;
 }
-bool ParseCommandLine(int argc,wchar* argv[])
+/*bool ParseCommandLine(int argc,wchar* argv[])
 {
 
 	int cl=argc-2;
@@ -154,4 +154,4 @@ bool ParseCommandLine(int argc,wchar* argv[])
 	}
 	printf("\n");
 	return false;
-}
+} */

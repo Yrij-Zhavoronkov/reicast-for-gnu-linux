@@ -40,6 +40,7 @@ bool ConfigurePADS(DCPads &CfgPads);
 void ProcessMessagesFromServer(void);
 void* wrk_sock_thread(void * arg);
 bool LoadEmuConfig(void);
+void GiveMeIsoName(void);
 
 //#endif /* SYNC_NET_H */
 

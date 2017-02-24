@@ -14,6 +14,7 @@
 
 #include "sync_net.h"
 #include "cfg/cfg.h"
+#include <unistd.h>
 
 //#include <sync_net.h> //мой хедер
 
@@ -256,3 +257,18 @@ void* wrk_sock_thread(void * arg) //поток обсл сокет
         
         }; 
 };
+
+void GiveMeIsoName(void)
+{
+        string message="GET_ISO_NAME";
+            
+        send(IntSock,  message.data(), message.size(), 0); // отправка сообщения на сервер
+        message="";    
+            
+        std::cout <<"Жду ответа сервера\n";        
+               
+        recv(IntSock, settings.imgread.DefaultImage, sizeof(settings.imgread.DefaultImage), 0);
+        
+        //?? РЕШЕНИЕ, запускать или нет?
+        settings.imgread.LoadDefaultImage=(access(settings.imgread.DefaultImage, 0)==0);
+}

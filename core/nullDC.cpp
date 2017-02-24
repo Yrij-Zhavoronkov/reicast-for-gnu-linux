@@ -144,10 +144,10 @@ int dc_init(int argc,wchar* argv[])
 	webui_thd.Start();
 #endif  */
 
-	if(ParseCommandLine(argc,argv))
+	/*if(ParseCommandLine(argc,argv))
 	{
 		return 69;
-	}
+	}*/
 	if(!cfgOpen())
 	{
 		msgboxf("Unable to open config file",MBX_ICONERROR);
