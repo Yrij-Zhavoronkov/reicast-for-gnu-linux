@@ -315,12 +315,13 @@ void x11_window_create()
 		// Add to these for handling other events
 		sWA.event_mask = StructureNotifyMask | ExposureMask | ButtonPressMask | ButtonReleaseMask | KeyPressMask | KeyReleaseMask;
 		ui32Mask = CWBackPixel | CWBorderPixel | CWEventMask | CWColormap;
-
-		x11_width = cfgLoadInt("x11", "width", DEFAULT_WINDOW_WIDTH);
+                                    
+                                                 
+		/*x11_width = cfgLoadInt("x11", "width", DEFAULT_WINDOW_WIDTH);
 		x11_height = cfgLoadInt("x11", "height", DEFAULT_WINDOW_HEIGHT);
-		x11_fullscreen = (cfgLoadInt("x11", "fullscreen", DEFAULT_FULLSCREEN) > 0);
+		x11_fullscreen = (cfgLoadInt("x11", "fullscreen", DEFAULT_FULLSCREEN) > 0); */
 
-		if (x11_width < 0 || x11_height < 0)
+		if (x11_width <= 0 || x11_height <= 0)   //FIXED!!
 		{
 			x11_width = XDisplayWidth(x11Display, x11Screen);
 			x11_height = XDisplayHeight(x11Display, x11Screen);

@@ -689,7 +689,7 @@ struct settings_t
 			u32 ShowFPS;
 			u32 ShowStats;
 		} OSD;
-
+               
 		u32 ta_skip;
 		u32 subdivide_transp;
 		u32 rend;

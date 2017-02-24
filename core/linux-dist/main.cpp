@@ -484,26 +484,29 @@ int main(int argc, wchar* argv[])
                     
                     //Соеденяемся с хозяином!!
                   std::cout <<"Создаю сокет!!";
-                  if (CreateSock()==0) 
+                  if (CreateSock()!=0)
                   {
-                      cout << "соединение прошло успешно\n";
-                            //загружаем конфиги с сервера
-                             ConfigurePADS(MainDCPADMap);
-                      
-                            cout << "Маппинги загружены\n";                               
-                  
+                  cout << "Связи нет.. выход";    
+                  return 20;
+                  }    
+                                        
+                             //загружаем конфиги с сервера
+                             if (!ConfigurePADS(MainDCPADMap)) 
+                             {cout <<"Не удалось загрузить параметры контроллеров";
+                               return 21;                             
+                             }
+
+                             if (!LoadEmuConfig()) 
+                             {cout <<"Не удалось загрузить конфиги";
+                               return 22;                             
+                             }
                   
                            pthread_t Sock_thread; //дескриптор сокета
                             void* Sock_data = NULL;  //параметр потока
                             //Создаем событие (синхронизация)
                                                        
                             pthread_create(&Sock_thread, NULL, wrk_sock_thread, Sock_data);
-                  }
-                  else
-                  {
-                  cout << "Связи нет.. выход";    
-                  return 25;
-                  }
+               
                  
                   
                    //инициализация устройств
