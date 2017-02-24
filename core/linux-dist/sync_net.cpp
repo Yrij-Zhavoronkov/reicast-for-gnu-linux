@@ -245,20 +245,15 @@ void ProcessMessagesFromServer(void)  //обработка дальнейших 
 };
 
 void* wrk_sock_thread(void * arg) //поток обсл сокет
-{
-    
-   
+{   
    if (IntSock!=-1)
       {     
         //слушаем сокет дальше (для команд стоп, старт, свернуть, выгрузка, загрузака и пр)
         ProcessMessagesFromServer();  
-        
-      
-        
-        }; 
+      }; 
 };
 
-void GiveMeIsoName(void)
+void SetupExecIso(void)
 {
         string message="GET_ISO_NAME";
             

@@ -502,7 +502,7 @@ int main(int argc, wchar* argv[])
                              }
                              
                              //получаем полное имя образа для запуска
-                             GiveMeIsoName();
+                             SetupExecIso();
                             
                  
                            pthread_t Sock_thread; //дескриптор сокета

@@ -205,8 +205,6 @@ int dc_init(int argc,wchar* argv[])
                            mcfg_CreateDevices(dport, MainDCPADMap[dport].PlugMMU[0], MainDCPADMap[dport].PlugMMU[1]); 
                       }
                   
-
-
 	plugins_Reset(false);
 	mem_Reset(false);
 	
