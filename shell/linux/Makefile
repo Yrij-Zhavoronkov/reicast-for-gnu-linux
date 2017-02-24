@@ -9,8 +9,9 @@ USE_OSS := 1
 USE_EVDEV := 1
 USE_JOYSTICK := 1
 
-CXX=${CC_PREFIX}g++ -std=c++11
-CC=${CC_PREFIX}gcc -std=c++11
+CXX=${CC_PREFIX}g++ 
+# -std=c++11
+CC=${CC_PREFIX}gcc
 AS=${CC_PREFIX}as
 STRIP=${CC_PREFIX}strip
 LD=${CC}
@@ -189,13 +190,14 @@ endif
 RZDCY_SRC_DIR = ../../core
 include $(RZDCY_SRC_DIR)/core.mk
 
-LDFLAGS += -g -Wl,-Map,$(notdir $@).map,--gc-sections -Wl,-O3 -Wl,--sort-common
+LDFLAGS += -g -Wl,-Map,$(notdir $@).map,--gc-sections -Wl,-O2 -Wl,--sort-common
 
-CFLAGS += -g -O3 -D RELEASE -c -D USES_HOMEDIR #-D NO_REND
+CFLAGS += -g -O2 -D RELEASE -c -D USES_HOMEDIR #-D NO_REND
 CFLAGS += -frename-registers -fno-strict-aliasing
 CFLAGS += -ffast-math -ftree-vectorize
 
 CXXFLAGS += -fno-rtti -fpermissive -fno-operator-names
+#-fpermissive
 
 INCS += -I$(RZDCY_SRC_DIR) -I$(RZDCY_SRC_DIR)/deps -I$(RZDCY_SRC_DIR)/khronos
 
@@ -239,9 +241,9 @@ ifdef USE_X11
     LIBS += -lX11
 endif
 
-ifdef USE_EVDEV
+#ifdef USE_EVDEV
     CXXFLAGS += -D USE_EVDEV
-endif
+#endif
 
 ifdef USE_JOYSTICK
     CXXFLAGS += -D USE_JOYSTICK
@@ -281,7 +283,7 @@ ifdef HAS_SOFTREND
     CXXFLAGS += -DTARGET_SOFTREND
 endif
 
-EXECUTABLE_STRIPPED=nosym-reicast.elf
+EXECUTABLE_STRIPPED=reicast.run
 ifdef NAOMI
     CFLAGS += -D TARGET_NAOMI
     DC_PLATFORM=naomi
